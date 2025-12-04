@@ -1,32 +1,26 @@
 #include<iostream>
 using namespace std;
-void fizzBuzz()
+
+void shiftArray(int size,int array[])
 {
-    int num;
-    cout<<"Enter a number : ";
-    cin>>num;
-    for(int i=1;i<=num;i++)
+    int half=size/2;
+    for(int i=0;i<half;i++)
     {
-        if(i%3==0 && i%5==0)
-        {
-            cout<<"FizzBuzz"<<endl;
-        }
-        else if(i%3==0)
-        {
-            cout<<"Fizz"<<endl;
-        }
-        else if(i%5==0)
-        {
-            cout<<"Buzz"<<endl;
-        }
-        else
-        {
-            cout<<i<<endl;
-        }
+        int temp=array[i];
+        array[i]=array[i+half];
+        array[i+half]=temp;
     }
+    cout<<"The resultant array after shifting is : ";
+    for(int i=0;i<size;i++)
+    {
+        cout<<array[i]<<" ";
+    }
+    cout<<endl;
 }
 int main()
 {
-    fizzBuzz();
+    int array[]={1,2,3,4,5,6,7,8};
+    int size=sizeof(array)/sizeof(array[0]);
+    shiftArray(size,array);
     return 0;
 }

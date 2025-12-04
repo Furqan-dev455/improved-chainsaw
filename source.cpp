@@ -3,8 +3,30 @@ using namespace std;
 void fizzBuzz()
 {
     int num;
-    cout<<"Enter a number : "<<endl;
+    cout<<"Enter a number : ";
     cin>>num;
-    int size=num.size();
-    for(int =0;i<i)
+    for(int i=1;i<=num;i++)
+    {
+        if(i%3==0 && i%5==0)
+        {
+            cout<<"FizzBuzz"<<endl;
+        }
+        else if(i%3==0)
+        {
+            cout<<"Fizz"<<endl;
+        }
+        else if(i%5==0)
+        {
+            cout<<"Buzz"<<endl;
+        }
+        else
+        {
+            cout<<i<<endl;
+        }
+    }
+}
+int main()
+{
+    fizzBuzz();
+    return 0;
 }
